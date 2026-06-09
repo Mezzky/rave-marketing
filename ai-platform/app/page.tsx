@@ -2,7 +2,6 @@ import type { CSSProperties } from "react";
 import { InteractiveTilt } from "./components/InteractiveTilt";
 import { MotionReveal } from "./components/MotionReveal";
 import { ScrollExperience } from "./components/ScrollExperience";
-import { TravelOpsScene } from "./components/TravelOpsScene";
 
 const logoUrl =
   "https://cdn.sanity.io/images/iqsqxgxl/production/9be5e4a241048eb5df4a15708de64470cef42cc2-1200x424.png";
@@ -247,7 +246,35 @@ export default function Home() {
               operating system.
             </p>
           </div>
-          <TravelOpsScene />
+          <div className="opsGrowthPanel" aria-label="Animated business growth graph">
+            <div className="opsPanelHeader">
+              <span>Rave growth model</span>
+              <strong>Operational capacity</strong>
+            </div>
+            <div className="growthBars">
+              <i style={{ "--h": "34%" } as CSSProperties} />
+              <i style={{ "--h": "52%" } as CSSProperties} />
+              <i style={{ "--h": "66%" } as CSSProperties} />
+              <i style={{ "--h": "82%" } as CSSProperties} />
+              <i style={{ "--h": "96%" } as CSSProperties} />
+            </div>
+            <svg className="opsGraph" viewBox="0 0 560 260" role="presentation">
+              <defs>
+                <linearGradient id="opsGrowthFill" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#3366ff" stopOpacity="0.42" />
+                  <stop offset="100%" stopColor="#3366ff" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path
+                className="growthArea"
+                d="M0 216 C78 206 96 172 158 172 C224 172 232 126 294 126 C360 126 376 72 446 72 C496 72 516 34 560 24 L560 260 L0 260 Z"
+              />
+              <path
+                className="growthLine"
+                d="M0 216 C78 206 96 172 158 172 C224 172 232 126 294 126 C360 126 376 72 446 72 C496 72 516 34 560 24"
+              />
+            </svg>
+          </div>
         </MotionReveal>
         <div className="platformTheatre">
           <div className="axis" aria-hidden="true" />

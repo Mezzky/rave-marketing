@@ -688,7 +688,8 @@ h3 {
   display: block;
 }
 
-.blueGrowthGraph {
+.blueGrowthGraph,
+.opsGrowthPanel {
   position: absolute;
   right: 18px;
   bottom: 18px;
@@ -700,7 +701,33 @@ h3 {
   backdrop-filter: blur(10px);
 }
 
-.blueGrowthGraph span {
+.opsGrowthPanel {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  min-height: 430px;
+  padding: 22px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    #252525;
+  background-size: 34px 34px;
+  border-radius: 16px;
+}
+
+.opsPanelHeader {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--white);
+}
+
+.blueGrowthGraph span,
+.opsPanelHeader span {
   display: block;
   margin-bottom: 4px;
   color: var(--secondary-light);
@@ -709,10 +736,25 @@ h3 {
   text-transform: uppercase;
 }
 
-.blueGrowthGraph svg {
+.opsPanelHeader strong {
+  color: var(--primary);
+  font-size: 14px;
+  text-align: right;
+}
+
+.blueGrowthGraph svg,
+.opsGraph {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.opsGraph {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 20px;
+  width: calc(100% - 44px);
 }
 
 .growthArea {
@@ -732,13 +774,18 @@ h3 {
 
 .growthBars {
   position: absolute;
-  inset: auto 16px 18px 16px;
+  inset: auto 18px 28px 18px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   align-items: end;
-  height: 42%;
+  height: 48%;
   opacity: 0.78;
+}
+
+.opsGrowthPanel .growthBars {
+  inset: auto 42px 36px 42px;
+  height: 52%;
 }
 
 .growthBars i {
