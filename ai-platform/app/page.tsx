@@ -1,7 +1,9 @@
 import type { CSSProperties } from "react";
+import { GSAPStorytelling } from "./components/GSAPStorytelling";
 import { InteractiveTilt } from "./components/InteractiveTilt";
 import { MotionReveal } from "./components/MotionReveal";
 import { ScrollExperience } from "./components/ScrollExperience";
+import { TypingHeadline } from "./components/TypingHeadline";
 
 const logoUrl =
   "https://cdn.sanity.io/images/iqsqxgxl/production/9be5e4a241048eb5df4a15708de64470cef42cc2-1200x424.png";
@@ -100,10 +102,29 @@ const transformationProgram = [
   },
 ];
 
+const storyHeadline =
+  "Every scroll moves your operation from pressure to leverage.";
+
+function RocketIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="rocketIcon"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="m3.7 11.287 3.623-3.624q.293-.292.671-.413t.783-.04l1.415.294Q9.073 8.873 8.366 9.98t-1.414 2.688zm4.125 1.62q.652-1.51 1.563-2.89.91-1.378 2.08-2.548 1.873-1.873 4.073-2.806t4.746-.797q.136 2.546-.795 4.746t-2.803 4.073q-1.164 1.163-2.548 2.07t-2.897 1.559zm6.17-2.768q.44.44 1.066.44t1.066-.44.44-1.057-.44-1.057-1.066-.44-1.067.44-.44 1.057.44 1.056m-1.161 10.314L11.444 17.2q1.581-.706 2.691-1.423 1.111-.717 2.48-1.836l.289 1.415q.08.404-.031.785-.111.382-.404.675zm-7.687-4.306q.587-.586 1.423-.58t1.423.594q.587.586.587 1.423t-.587 1.423q-.51.51-1.635.873t-2.605.502q.138-1.479.511-2.602t.883-1.633"
+      />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <main>
       <ScrollExperience />
+      <GSAPStorytelling />
       <header className="nav">
         <a className="logo" href="#top" aria-label="Rave.tech home">
           <img src={logoUrl} alt="Rave.tech" />
@@ -168,44 +189,31 @@ export default function Home() {
               </div>
               <div className="miniMetrics">
                 <article>
-                  <strong>24/7</strong>
-                  <span>Self-service sales</span>
+                  <strong>43.3%</strong>
+                  <span>average reduction in manual man-hours</span>
                 </article>
                 <article>
-                  <strong>1</strong>
-                  <span>Central workspace</span>
+                  <strong>4x</strong>
+                  <span>faster quotation turnaround</span>
                 </article>
                 <article>
-                  <strong>48h</strong>
-                  <span>Team response</span>
+                  <strong>BIF / EDG</strong>
+                  <span>grant-eligible transformation</span>
                 </article>
               </div>
             </div>
           </InteractiveTilt>
-          <div className="orbitalSystem" aria-hidden="true">
-            <div className="aiCore">AI</div>
-            {modules.slice(0, 6).map((moduleName, index) => (
-              <span
-                key={moduleName}
-                style={
-                  {
-                    "--i": index,
-                    "--angle": `${index * 60}deg`,
-                    "--rangle": `${index * -60}deg`,
-                  } as CSSProperties
-                }
-              >
-                {moduleName}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 
       <section className="ticker" aria-label="Rave.tech platform modules">
         <div className="tickerTrack">
-          {[...modules, ...modules, ...modules].map((moduleName, index) => (
-            <span key={`${moduleName}-${index}`}>{moduleName}</span>
+          {[0, 1, 2, 3].map((group) => (
+            <div className="tickerGroup" key={group} aria-hidden={group > 0}>
+              {modules.map((moduleName) => (
+                <span key={`${moduleName}-${group}`}>{moduleName}</span>
+              ))}
+            </div>
           ))}
         </div>
       </section>
@@ -213,7 +221,12 @@ export default function Home() {
       <section className="storySection" id="story">
         <div className="sectionIntro">
           <p className="eyebrow">Problem to solution journey</p>
-          <h2>Every scroll moves your operation from pressure to leverage.</h2>
+          <h2
+            className="storyTypeTitle"
+            data-text={storyHeadline}
+          >
+            <TypingHeadline text={storyHeadline} />
+          </h2>
           <p>
             Travel growth should feel like opportunity, not another layer of
             admin. Rave.tech turns scattered work into a coordinated operating
@@ -333,7 +346,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="outcomeSection">
+      <section className="outcomeSection blueSandSection">
+        <div className="blueSandCursor" aria-hidden="true" />
         <div className="beforeAfter">
           <div>
             <p className="eyebrow">Before Rave.tech</p>
@@ -367,7 +381,9 @@ export default function Home() {
         </div>
         <div className="programJourney">
           <div className="rocketRail" aria-hidden="true">
-            <span className="rocket">▲</span>
+            <span className="rocket rocketSvg">
+              <RocketIcon />
+            </span>
           </div>
           <div className="programGrid">
             {transformationProgram.map((item, index) => (
