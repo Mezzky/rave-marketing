@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap");
 
 :root {
   --primary: #ffcc33;
@@ -144,22 +144,47 @@ main {
 
 .nav {
   position: fixed;
-  top: 18px;
+  top: 0;
   left: 50%;
   z-index: 20;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 24px;
   align-items: center;
+  width: 100%;
+  min-height: 86px;
+  padding: 18px var(--page-x);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: blur(0);
+  transform: translateX(-50%) translateY(0);
+  transition:
+    top 240ms ease,
+    width 240ms ease,
+    min-height 240ms ease,
+    padding 240ms ease,
+    background-color 240ms ease,
+    border-color 240ms ease,
+    border-radius 240ms ease,
+    box-shadow 240ms ease,
+    backdrop-filter 240ms ease,
+    transform 240ms ease;
+}
+
+.nav-scrolled .nav {
+  top: 18px;
   width: min(1360px, calc(100% - 24px));
   min-height: 72px;
   padding: 12px 14px 12px 22px;
   background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-color: rgba(255, 255, 255, 0.72);
   border-radius: 16px;
   box-shadow: 0 18px 50px rgba(37, 37, 37, 0.12);
   backdrop-filter: blur(18px);
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(0);
+  animation: navFloatIn 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .logo {
@@ -311,14 +336,14 @@ p {
 h1,
 h2,
 h3 {
-  font-family: "Open Sans", Montserrat, Arial, sans-serif;
+  font-family: "DM Sans", Montserrat, Arial, sans-serif;
   letter-spacing: 0;
 }
 
 h1 {
   margin-bottom: 24px;
   max-width: 780px;
-  font-size: clamp(46px, 6.4vw, 86px);
+  font-size: clamp(42px, 5.8vw, 78px);
   line-height: 0.94;
 }
 
@@ -329,19 +354,18 @@ h1 span {
 
 h2 {
   margin-bottom: 18px;
-  font-size: clamp(34px, 5vw, 72px);
+  font-size: clamp(31px, 4.5vw, 64px);
   line-height: 0.98;
 }
 
 h3 {
   margin-bottom: 12px;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.05;
 }
 
 .heroCopy p:not(.eyebrow),
 .sectionIntro p,
-.fundingSection p,
 .auditCopy p,
 .beforeAfter p {
   color: var(--grey);
@@ -531,10 +555,36 @@ h3 {
   display: block;
   margin-bottom: 10px;
   color: var(--dark);
-  font-family: "Open Sans", Montserrat, Arial, sans-serif;
+  font-family: "DM Sans", Montserrat, Arial, sans-serif;
   font-size: clamp(27px, 2.6vw, 36px);
   font-weight: 600;
   line-height: 1;
+}
+
+.miniMetrics article:nth-child(3) {
+  display: grid;
+  place-items: center;
+  padding-inline: 18px;
+  background: linear-gradient(135deg, var(--primary-light), #ffffff);
+}
+
+.miniMetrics article:nth-child(3) strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 220px;
+  margin-bottom: 0;
+  padding: 10px 14px;
+  color: var(--dark);
+  background: var(--primary);
+  border: 1px solid rgba(255, 204, 51, 0.55);
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(255, 204, 51, 0.18);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 800;
+  line-height: 1.25;
+  text-transform: uppercase;
 }
 
 .miniMetrics span {
@@ -566,7 +616,7 @@ h3 {
   background: var(--primary);
   border-radius: 50%;
   box-shadow: 0 26px 60px rgba(255, 204, 51, 0.36);
-  font-family: "Open Sans", Montserrat, Arial, sans-serif;
+  font-family: "DM Sans", Montserrat, Arial, sans-serif;
   font-size: 38px;
   font-weight: 900;
 }
@@ -626,12 +676,111 @@ h3 {
 }
 
 .storySection,
+.robotSection,
 .platformSection,
 .outcomeSection,
 .programSection,
-.fundingSection,
 .auditSection {
   padding: clamp(76px, 10vw, 148px) var(--page-x);
+}
+
+.programSection {
+  padding-top: clamp(54px, 7vw, 92px);
+  padding-bottom: clamp(54px, 7vw, 92px);
+}
+
+.robotSection {
+  position: relative;
+  display: grid;
+  gap: clamp(22px, 3vw, 40px);
+  justify-items: center;
+  min-height: 100vh;
+  padding-top: clamp(54px, 6vw, 84px);
+  padding-bottom: clamp(42px, 5vw, 72px);
+  color: var(--dark);
+  background:
+    radial-gradient(circle at 50% 32%, rgba(255, 204, 51, 0.34), transparent 24%),
+    radial-gradient(circle at 76% 54%, rgba(51, 102, 255, 0.14), transparent 24%),
+    #ffffff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.robotIntro {
+  max-width: 980px;
+}
+
+.robotIntro .eyebrow {
+  color: var(--secondary);
+}
+
+.robotIntro h2 {
+  margin-bottom: 0;
+  font-size: clamp(30px, 3.8vw, 54px);
+}
+
+.robotCopy p:not(.eyebrow) {
+  max-width: 980px;
+  margin-bottom: 0;
+  margin-inline: auto;
+  color: var(--grey);
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.robotPrompts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  gap: 12px;
+  width: min(100%, 1040px);
+  margin: 18px auto 0;
+}
+
+.robotPrompts span {
+  display: grid;
+  place-items: center;
+  min-height: 58px;
+  padding: 12px 16px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--secondary), #234cd8);
+  border: 1px solid rgba(163, 186, 255, 0.48);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(51, 102, 255, 0.2);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.robotStage {
+  margin-top: clamp(10px, 2vw, 24px);
+  position: relative;
+  width: min(100%, 1320px);
+  min-height: clamp(420px, 48vh, 560px);
+  overflow: hidden;
+  contain: layout paint;
+  background:
+    linear-gradient(90deg, rgba(37, 37, 37, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(37, 37, 37, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 50% 62%, rgba(51, 102, 255, 0.12), transparent 30%),
+    rgba(255, 244, 194, 0.32);
+  background-size: 34px 34px;
+  border: 1px solid rgba(37, 37, 37, 0.1);
+  border-radius: 22px;
+  box-shadow: 0 28px 90px rgba(37, 37, 37, 0.14);
+}
+
+.robotStage spline-viewer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  transform: scale(1.22);
+  transform-origin: center;
+}
+
+.robotScrollLock .robotStage spline-viewer {
+  pointer-events: none;
 }
 
 .sectionIntro {
@@ -641,20 +790,21 @@ h3 {
 
 .storyTypeTitle {
   position: relative;
-  display: grid;
+  display: block;
+  max-width: min(1180px, 100%);
+  overflow: visible;
 }
 
 .storyTypeText {
-  grid-area: 1 / 1;
-  display: block;
-  overflow: hidden;
+  display: inline;
+  overflow: visible;
   min-height: 1.02em;
+  white-space: normal;
+  overflow-wrap: normal;
 }
 
 .storyTypeTitle::before {
-  content: attr(data-text);
-  grid-area: 1 / 1;
-  color: rgba(37, 37, 37, 0.18);
+  content: none;
 }
 
 .ti-cursor {
@@ -720,7 +870,7 @@ h3 {
   display: inline-flex;
   margin-bottom: 36px;
   color: var(--secondary);
-  font-family: "Open Sans", Montserrat, Arial, sans-serif;
+  font-family: "DM Sans", Montserrat, Arial, sans-serif;
   font-size: 42px;
   font-weight: 900;
 }
@@ -1000,7 +1150,7 @@ h3 {
 
 .coreProduct strong {
   max-width: 190px;
-  font-family: "Open Sans", Montserrat, Arial, sans-serif;
+  font-family: "DM Sans", Montserrat, Arial, sans-serif;
   font-size: 34px;
   line-height: 0.98;
 }
@@ -1283,35 +1433,68 @@ h3 {
   grid-row: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 22px;
 }
 
-.programGrid article {
+.programCard {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 360px;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.86);
-  border: 1px solid rgba(37, 37, 37, 0.1);
+  background: #ffffff !important;
+  border: 1px solid rgba(37, 37, 37, 0.16);
   border-radius: 14px;
-  box-shadow: 0 22px 60px rgba(37, 37, 37, 0.08);
+  box-shadow: 0 24px 70px rgba(37, 37, 37, 0.13);
   backdrop-filter: blur(14px);
-  opacity: 0;
-  transform: translateY(84px) scale(0.96);
+  opacity: 1 !important;
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   will-change: transform, opacity;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    opacity 180ms ease,
+    filter 180ms ease;
 }
 
-.programGrid article:nth-child(2) {
-  margin-top: 42px;
+.programCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #ffffff;
+  border-radius: inherit;
 }
 
-.programGrid article:nth-child(3) {
-  margin-top: 84px;
+.programCard > * {
+  position: relative;
+  z-index: 1;
+}
+
+.programGrid .programCard.interactiveTilt {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+.programCard:hover {
+  border-color: rgba(51, 102, 255, 0.38);
+  box-shadow: 0 24px 58px rgba(51, 102, 255, 0.15);
+}
+
+.programCard:nth-child(2) {
+  margin-top: 0;
+}
+
+.programCard:nth-child(3) {
+  margin-top: 0;
 }
 
 .programGrid span {
   display: inline-flex;
   margin-bottom: 70px;
   color: var(--primary);
-  font-family: "Open Sans", Montserrat, Arial, sans-serif;
+  font-family: "DM Sans", Montserrat, Arial, sans-serif;
   font-size: 54px;
   font-weight: 900;
   text-shadow: 0 8px 0 rgba(51, 102, 255, 0.12);
@@ -1322,66 +1505,12 @@ h3 {
   line-height: 1.68;
 }
 
-.fundingSection {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(24px, 4vw, 52px);
-  align-items: center;
-  background: #ffffff;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.fundingSummary {
-  display: grid;
-  gap: 10px;
-  min-width: min(360px, 36vw);
-  padding: 24px;
-  background: var(--primary-light);
-  border: 1px solid rgba(255, 204, 51, 0.46);
-  border-radius: 14px;
-}
-
-.fundingSummary span {
-  color: var(--grey);
-  font-size: 13px;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.fundingSummary strong {
-  color: var(--dark);
-  font-family: "Open Sans", Montserrat, Arial, sans-serif;
-  font-size: 28px;
-  line-height: 1;
-}
-
-.fundingSection .button {
-  margin-top: 24px;
-}
-
 .auditSection {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: clamp(28px, 5vw, 72px);
-  align-items: start;
+  align-items: center;
   background: #ffffff;
-}
-
-.auditList {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 30px;
-}
-
-.auditList span {
-  padding: 14px;
-  background: var(--primary-light);
-  border: 1px solid rgba(255, 204, 51, 0.42);
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 900;
 }
 
 .contactForm {
@@ -1444,6 +1573,17 @@ footer {
 @keyframes deckFloat {
   from { transform: rotateY(-10deg) rotateX(5deg) translateY(0); }
   to { transform: rotateY(-4deg) rotateX(8deg) translateY(-18px); }
+}
+
+@keyframes navFloatIn {
+  from {
+    opacity: 0.88;
+    transform: translateX(-50%) translateY(-12px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
 }
 
 @keyframes signalRise {
@@ -1587,7 +1727,6 @@ footer {
   }
 
   .hero,
-  .fundingSection,
   .auditSection,
   .immersiveOps,
   .beforeAfter {
@@ -1600,7 +1739,7 @@ footer {
 
   .storyRail,
   .featureGrid,
-  .programGrid {
+  .robotPrompts {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1611,7 +1750,28 @@ footer {
 }
 
 @media (max-width: 720px) {
+  :root {
+    --page-x-mobile: 18px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
   .nav {
+    top: 0;
+    width: 100%;
+    min-height: 62px;
+    padding: 10px 18px;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  .nav > span[aria-hidden="true"] {
+    display: none;
+  }
+
+  .nav-scrolled .nav {
     top: 10px;
     width: calc(100% - 20px);
     min-height: 62px;
@@ -1619,10 +1779,11 @@ footer {
   }
 
   .logo {
-    width: 128px;
+    width: 92px;
   }
 
   .navCta {
+    width: auto;
     min-height: 40px;
     padding: 0 12px;
     font-size: 12px;
@@ -1632,30 +1793,75 @@ footer {
     right: 14px;
     bottom: 14px;
     min-width: 118px;
-    padding: 12px 14px;
+    padding: 10px 12px;
+    transform: scale(0.92);
+    transform-origin: right bottom;
   }
 
   .storyHud {
-    left: 14px;
-    right: 14px;
-    bottom: 80px;
-    max-width: none;
+    display: none;
   }
 
   .hero {
-    padding: 112px var(--page-x-mobile) 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    min-height: auto;
+    padding: 96px var(--page-x-mobile) 44px;
   }
 
   h1 {
-    font-size: 48px;
+    max-width: 100%;
+    margin-bottom: 18px;
+    font-size: clamp(34px, 10vw, 44px);
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: clamp(27px, 8vw, 36px);
+    line-height: 1.05;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .heroCopy p:not(.eyebrow),
+  .sectionIntro p,
+  .auditCopy p,
+  .beforeAfter p,
+  .programSection p,
+  .robotCopy p:not(.eyebrow) {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .heroActions {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+
+  .button {
+    width: 100%;
   }
 
   .heroStage {
-    min-height: 600px;
+    order: 1;
+    min-height: auto;
+  }
+
+  .heroCopy {
+    order: 2;
   }
 
   .commandDeck {
+    position: relative;
     top: 0;
+    right: auto;
+    width: 100%;
+    padding: 14px;
+    border-radius: 16px;
     transform: none;
   }
 
@@ -1664,11 +1870,31 @@ footer {
   }
 
   .deckBody,
-  .miniMetrics,
   .storyRail,
   .featureGrid,
-  .auditList {
+  .beforeAfter {
     grid-template-columns: 1fr;
+  }
+
+  .deckBody {
+    gap: 12px;
+  }
+
+  .bookingCard {
+    min-height: 210px;
+    padding: 20px;
+  }
+
+  .bookingCard strong {
+    font-size: 30px;
+  }
+
+  .routeMap {
+    display: none;
+  }
+
+  .miniMetrics {
+    display: none;
   }
 
   .orbitalSystem {
@@ -1691,40 +1917,89 @@ footer {
   }
 
   .storySection,
+  .robotSection,
   .platformSection,
   .outcomeSection,
   .programSection,
-  .fundingSection,
   .auditSection {
-    padding: 72px var(--page-x-mobile);
+    padding: 58px var(--page-x-mobile);
+  }
+
+  .robotSection {
+    min-height: auto;
+    gap: 18px;
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .robotIntro h2 {
+    font-size: clamp(27px, 8vw, 34px);
+  }
+
+  .robotStage {
+    width: 100%;
+    min-height: 330px;
+    border-radius: 16px;
+  }
+
+  .robotStage spline-viewer {
+    transform: scale(1.08);
+  }
+
+  .robotPrompts span {
+    padding: 10px;
+    min-height: 54px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .storyCard,
+  .featureCard,
+  .programCard {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .storyCard span,
+  .featureCard span,
+  .programGrid span {
+    margin-bottom: 28px;
+    font-size: 38px;
+  }
+
+  .storyRail {
+    gap: 14px;
+  }
+
+  .storyCard,
+  .storyCard:nth-child(2),
+  .storyCard:nth-child(3),
+  .storyCard:nth-child(4) {
+    top: auto;
+    margin-top: 0 !important;
+  }
+
+  .sectionIntro {
+    margin-bottom: 32px;
   }
 
   .programGrid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .programJourney {
     grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .rocketRail {
-    min-height: 120px;
+    display: none;
   }
 
-  .rocketRail::before {
-    left: 29px;
-  }
-
-  .rocket {
-    position: relative;
-    top: auto;
-    left: 0;
-    transform: none;
-  }
-
-  .programGrid article,
-  .programGrid article:nth-child(2),
-  .programGrid article:nth-child(3) {
+  .programCard,
+  .programCard:nth-child(2),
+  .programCard:nth-child(3) {
     min-height: auto;
     margin-top: 0;
   }
@@ -1734,11 +2009,23 @@ footer {
   }
 
   .platformTheatre {
-    min-height: 720px;
+    min-height: 560px;
+    margin: 44px auto 36px;
+  }
+
+  .robotPrompts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .immersiveOps {
-    padding: 22px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .opsGrowthPanel {
+    min-height: 320px;
+    padding: 18px;
   }
 
   .threeScene {
@@ -1752,22 +2039,39 @@ footer {
   }
 
   .coreProduct {
-    width: 210px;
-    height: 210px;
+    width: 190px;
+    height: 190px;
   }
 
   .coreProduct strong {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .moduleChip {
-    min-width: 124px;
-    font-size: 13px;
-    transform: rotate(var(--angle)) translateX(160px) rotate(var(--rangle));
+    min-width: 112px;
+    padding: 12px 13px;
+    font-size: 12px;
+    transform: rotate(var(--angle)) translateX(142px) rotate(var(--rangle));
   }
 
-  .beforeAfter > div,
-  .fundingSummary {
-    min-height: 380px;
+  .beforeAfter > div {
+    min-height: 320px;
+    padding: 28px;
+  }
+
+  .auditSection {
+    gap: 28px;
+  }
+
+  .contactForm {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  footer {
+    display: grid;
+    gap: 8px;
+    text-align: center;
+    padding: 24px 18px 92px;
   }
 }

@@ -4,10 +4,10 @@ import Lenis from "lenis";
 import { useEffect, useState } from "react";
 
 const scrollMessages = [
-  "Bookings arrive from every channel.",
-  "Manual work starts compounding.",
-  "Rave.tech coordinates the handoffs.",
-  "Your team scales with more control.",
+  "More bookings.",
+  "Less manual work.",
+  "Cleaner handoffs.",
+  "More control.",
 ];
 
 export function ScrollExperience() {
@@ -34,6 +34,7 @@ export function ScrollExperience() {
         document.documentElement.scrollHeight - window.innerHeight;
       const nextProgress =
         scrollable > 0 ? window.scrollY / scrollable : 0;
+      const isScrolled = window.scrollY > 56;
 
       setProgress(Math.min(1, Math.max(0, nextProgress)));
       setMessageIndex(
@@ -46,6 +47,7 @@ export function ScrollExperience() {
         "--scroll-progress",
         String(nextProgress),
       );
+      document.documentElement.classList.toggle("nav-scrolled", isScrolled);
     };
 
     rafId = requestAnimationFrame(raf);
@@ -56,6 +58,7 @@ export function ScrollExperience() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      document.documentElement.classList.remove("nav-scrolled");
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("resize", updateProgress);
     };

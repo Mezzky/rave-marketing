@@ -3,6 +3,7 @@ import { GSAPStorytelling } from "./components/GSAPStorytelling";
 import { InteractiveTilt } from "./components/InteractiveTilt";
 import { MotionReveal } from "./components/MotionReveal";
 import { ScrollExperience } from "./components/ScrollExperience";
+import { SplineRobotSection } from "./components/SplineRobotSection";
 import { TypingHeadline } from "./components/TypingHeadline";
 
 const logoUrl =
@@ -34,7 +35,7 @@ const story = [
   },
   {
     label: "03",
-    title: "Rave.tech coordinates",
+    title: "Rave Tech coordinates",
     text: "Your accounting, ecommerce, inventory, tour operations, payments, and APIs move through one AI-assisted operating layer.",
   },
   {
@@ -54,7 +55,7 @@ const features = [
       "Receive payment online",
     ],
     description:
-      "Multi-step workflows, complex tax rules, and changing currency exchange rates need accounting built from the ground up for travel businesses.",
+      "Accounting built for bookings, deposits, revenue, and travel complexity.",
   },
   {
     number: "02",
@@ -65,7 +66,7 @@ const features = [
       "Intelligent pickup scheduling",
     ],
     description:
-      "After the sale, Rave operations keeps every moving part visible so your team can deliver better customer experiences.",
+      "Keep post-sale work visible, assigned, and moving.",
   },
   {
     number: "03",
@@ -76,15 +77,8 @@ const features = [
       "Micro stores for sales events",
     ],
     description:
-      "Give customers automated self-service touchpoints to place reservations and make payments across your travel products.",
+      "Sell tours, services, and payments through digital channels.",
   },
-];
-
-const auditItems = [
-  "A personalized demo of Rave.tech software",
-  "Robust automated workflows",
-  "Ways to enhance customer service",
-  "Tools to help optimize pricing",
 ];
 
 const transformationProgram = [
@@ -94,7 +88,7 @@ const transformationProgram = [
   },
   {
     title: "Design the AI operating model",
-    text: "Rave.tech becomes the coordination layer that connects your current revenue channels with cleaner workflows and stronger management visibility.",
+    text: "Rave Tech becomes the coordination layer that connects your current revenue channels with cleaner workflows and stronger management visibility.",
   },
   {
     title: "Launch measurable improvements",
@@ -126,15 +120,10 @@ export default function Home() {
       <ScrollExperience />
       <GSAPStorytelling />
       <header className="nav">
-        <a className="logo" href="#top" aria-label="Rave.tech home">
-          <img src={logoUrl} alt="Rave.tech" />
+        <a className="logo" href="#top" aria-label="Rave Tech home">
+          <img src={logoUrl} alt="Rave Tech" />
         </a>
-        <nav aria-label="Primary navigation">
-          <a href="#story">Story</a>
-          <a href="#platform">Platform</a>
-          <a href="#funding">Grant</a>
-          <a href="#contact">Audit</a>
-        </nav>
+        <span aria-hidden="true" />
         <a className="navCta" href="#contact">
           Demo / Contact
         </a>
@@ -148,9 +137,8 @@ export default function Home() {
             <span>Not headcount.</span>
           </h1>
           <p>
-            Transform your travel agency&apos;s operations with ERP, ecommerce,
-            inventory, payments, APIs, and AI-assisted workflows built for the
-            real complexity of travel.
+            AI-assisted ERP, ecommerce, payments, inventory, and workflows for
+            modern travel teams.
           </p>
           <div className="heroActions">
             <a className="button primary" href="#contact">
@@ -197,8 +185,7 @@ export default function Home() {
                   <span>faster quotation turnaround</span>
                 </article>
                 <article>
-                  <strong>BIF / EDG</strong>
-                  <span>grant-eligible transformation</span>
+                  <strong>Grant Eligible Transformation</strong>
                 </article>
               </div>
             </div>
@@ -206,7 +193,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="ticker" aria-label="Rave.tech platform modules">
+      <section className="ticker" aria-label="Rave Tech platform modules">
         <div className="tickerTrack">
           {[0, 1, 2, 3].map((group) => (
             <div className="tickerGroup" key={group} aria-hidden={group > 0}>
@@ -218,6 +205,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SplineRobotSection />
+
       <section className="storySection" id="story">
         <div className="sectionIntro">
           <p className="eyebrow">Problem to solution journey</p>
@@ -228,9 +217,7 @@ export default function Home() {
             <TypingHeadline text={storyHeadline} />
           </h2>
           <p>
-            Travel growth should feel like opportunity, not another layer of
-            admin. Rave.tech turns scattered work into a coordinated operating
-            system for modern agencies.
+            Turn scattered manual work into one coordinated operating system.
           </p>
         </div>
         <div className="storyRail">
@@ -247,16 +234,14 @@ export default function Home() {
       <section className="platformSection" id="platform">
         <div className="sectionIntro centered">
           <p className="eyebrow">Product ecosystem</p>
-          <h2>One premium operating layer for travel revenue, finance, and delivery.</h2>
+          <h2>One operating layer for travel growth.</h2>
         </div>
         <MotionReveal className="immersiveOps">
           <div>
             <p className="eyebrow">Live operations model</p>
-            <h2>Watch the business connect around the AI core.</h2>
+            <h2>Connect sales, finance, and operations.</h2>
             <p>
-              The 3D layer represents how Rave.tech links bookings, finance,
-              inventory, payments, and tour operations into one intelligent
-              operating system.
+              Rave Tech links booking work into one AI-assisted model.
             </p>
           </div>
           <div className="opsGrowthPanel" aria-label="Animated business growth graph">
@@ -308,7 +293,7 @@ export default function Home() {
                 </i>
               ))}
             </div>
-            <span>Rave.tech</span>
+            <span>Rave Tech</span>
             <strong>Travel ERP Software</strong>
             <p>Unlocking travel&apos;s revenue potential</p>
           </div>
@@ -350,20 +335,17 @@ export default function Home() {
         <div className="blueSandCursor" aria-hidden="true" />
         <div className="beforeAfter">
           <div>
-            <p className="eyebrow">Before Rave.tech</p>
-            <h2>Teams chase the booking after it closes.</h2>
+            <p className="eyebrow">Before Rave Tech</p>
+            <h2>Chase the booking after it closes.</h2>
             <p>
-              Finance waits on operations. Operations waits on missing customer
-              details. Customers wait for answers. Growth creates more manual
-              coordination.
+              Finance waits. Ops waits. Customers wait. Growth feels like a game of whack-a-mole. 
             </p>
           </div>
           <div>
-            <p className="eyebrow">After Rave.tech</p>
+            <p className="eyebrow">After Rave Tech</p>
             <h2>The business moves as one system.</h2>
             <p>
-              Bookings, deposits, inventory, ecommerce, supplier handoffs, and
-              tour delivery become visible, trackable, and easier to scale.
+              Bookings, payments, suppliers, and delivery stay visible. Teams stay proactive. Growth feels like a rising tide, not a battle. 
             </p>
           </div>
         </div>
@@ -374,7 +356,7 @@ export default function Home() {
           <p className="eyebrow">Services-led transformation</p>
           <h2>Not a tool rollout. A sharper way to operate.</h2>
           <p>
-            Rave.tech helps travel agencies turn digital modernization into a
+            Rave Tech helps travel agencies turn digital modernization into a
             business growth program: clearer processes, better automation,
             stronger controls, and more capacity for sales.
           </p>
@@ -387,34 +369,13 @@ export default function Home() {
           </div>
           <div className="programGrid">
             {transformationProgram.map((item, index) => (
-              <article key={item.title}>
+              <InteractiveTilt className="programCard" key={item.title} strength={5}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
-              </article>
+              </InteractiveTilt>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="fundingSection" id="funding">
-        <div>
-          <p className="eyebrow">Grant funding opportunity</p>
-          <h2>Make digital transformation easier to justify.</h2>
-          <p>
-            Position Rave.tech as a strategic investment in automation,
-            compliance, customer experience, and operational capacity. The
-            funding conversation becomes a business-growth conversation.
-          </p>
-          <a className="button primary" href="#contact">
-            Discuss eligibility
-          </a>
-        </div>
-        <div className="fundingSummary">
-          <span>Grant-ready focus</span>
-          <strong>Efficiency</strong>
-          <strong>Compliance</strong>
-          <strong>Profitability</strong>
         </div>
       </section>
 
@@ -424,14 +385,9 @@ export default function Home() {
           <h2>Find the hidden capacity inside your travel agency.</h2>
           <p>
             Fill out the form and a member of our team will respond within 48
-            hours. Let&apos;s discuss how Rave.tech can streamline your
+            hours. Let&apos;s discuss how Rave Tech can streamline your
             workflow, ensure compliance, and boost profitability.
           </p>
-          <div className="auditList">
-            {auditItems.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
         </div>
         <form className="contactForm">
           <label>
@@ -457,8 +413,8 @@ export default function Home() {
       </section>
 
       <footer>
-        <span>© Rave Tech Pte. Ltd., 2025.</span>
-        <span>81 Aljunied Road, #03-01, Singapore 389823</span>
+        <span>© Rave Tech Pte. Ltd., 2026.</span>
+        <span>18 Cross St, #02-101, Singapore 048423</span>
         <a href="#">Privacy Policy</a>
       </footer>
     </main>

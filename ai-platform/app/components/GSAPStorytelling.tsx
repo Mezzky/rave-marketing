@@ -201,12 +201,25 @@ export function GSAPStorytelling() {
           0,
         );
 
-        gsap.utils.toArray<HTMLElement>(".programGrid article").forEach((card, index) => {
-          programTimeline.fromTo(
-            card,
-            { y: 110, opacity: 0, scale: 0.94 },
-            { y: 0, opacity: 1, scale: 1, ease: "power2.out" },
-            0.16 + index * 0.2,
+        gsap.utils.toArray<HTMLElement>(".programCard").forEach((card, index) => {
+          const cardContent = card.querySelectorAll("span, h3, p");
+
+          gsap.fromTo(
+            cardContent,
+            { opacity: 0, filter: "blur(10px)" },
+            {
+              opacity: 1,
+              filter: "blur(0px)",
+              duration: 0.65,
+              delay: index * 0.1,
+              ease: "power2.out",
+              immediateRender: false,
+              scrollTrigger: {
+                trigger: ".programSection",
+                start: "top 72%",
+                toggleActions: "play none none reverse",
+              },
+            },
           );
         });
 
