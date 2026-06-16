@@ -193,20 +193,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="ticker" aria-label="Rave Tech platform modules">
-        <div className="tickerTrack">
-          {[0, 1, 2, 3].map((group) => (
-            <div className="tickerGroup" key={group} aria-hidden={group > 0}>
-              {modules.map((moduleName) => (
-                <span key={`${moduleName}-${group}`}>{moduleName}</span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <SplineRobotSection />
-
       <section className="storySection" id="story">
         <div className="sectionIntro">
           <p className="eyebrow">Problem to solution journey</p>
@@ -230,6 +216,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <SplineRobotSection />
 
       <section className="platformSection" id="platform">
         <div className="sectionIntro centered">
