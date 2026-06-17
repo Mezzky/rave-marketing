@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap");
 
 :root {
   --primary: #ffcc33;
@@ -45,7 +45,7 @@ body {
   margin: 0;
   color: var(--dark);
   background: #fffdfa;
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: Inter, Arial, sans-serif;
   letter-spacing: 0;
 }
 
@@ -336,7 +336,7 @@ p {
 h1,
 h2,
 h3 {
-  font-family: "DM Sans", Montserrat, Arial, sans-serif;
+  font-family: Montserrat, Inter, Arial, sans-serif;
   letter-spacing: 0;
 }
 
@@ -555,7 +555,7 @@ h3 {
   display: block;
   margin-bottom: 10px;
   color: var(--dark);
-  font-family: "DM Sans", Montserrat, Arial, sans-serif;
+  font-family: Montserrat, Inter, Arial, sans-serif;
   font-size: clamp(27px, 2.6vw, 36px);
   font-weight: 600;
   line-height: 1;
@@ -580,7 +580,7 @@ h3 {
   border: 1px solid rgba(255, 204, 51, 0.55);
   border-radius: 999px;
   box-shadow: 0 12px 28px rgba(255, 204, 51, 0.18);
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: Montserrat, Inter, Arial, sans-serif;
   font-size: clamp(13px, 1.1vw, 16px);
   font-weight: 800;
   line-height: 1.25;
@@ -616,7 +616,7 @@ h3 {
   background: var(--primary);
   border-radius: 50%;
   box-shadow: 0 26px 60px rgba(255, 204, 51, 0.36);
-  font-family: "DM Sans", Montserrat, Arial, sans-serif;
+  font-family: Montserrat, Inter, Arial, sans-serif;
   font-size: 38px;
   font-weight: 900;
 }
@@ -639,12 +639,129 @@ h3 {
 }
 
 .storySection,
+.overviewSection,
 .robotSection,
 .platformSection,
 .outcomeSection,
 .programSection,
 .auditSection {
   padding: clamp(76px, 10vw, 148px) var(--page-x);
+}
+
+.overviewSection {
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.overviewStory {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr);
+  gap: 18px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.overviewFlow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 18px 44px rgba(37, 37, 37, 0.08);
+}
+
+.overviewFlow::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 55px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  opacity: 0.42;
+}
+
+.overviewStep {
+  position: relative;
+  min-height: 250px;
+  padding: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 244, 194, 0.42), rgba(255, 255, 255, 0)),
+    #ffffff;
+  border: 1px solid rgba(37, 37, 37, 0.08);
+  border-radius: 12px;
+}
+
+.overviewStep span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 28px;
+  color: var(--dark);
+  background: var(--primary);
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(255, 204, 51, 0.2);
+  font-family: Montserrat, Inter, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.overviewStep small {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--secondary);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.overviewStep h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.overviewStep p {
+  color: var(--grey);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.overviewOutcome {
+  display: grid;
+  align-content: end;
+  min-height: 100%;
+  padding: 28px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255, 204, 51, 0.34), transparent 28%),
+    linear-gradient(145deg, var(--dark), #111111);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.overviewOutcome .eyebrow {
+  color: var(--primary);
+}
+
+.overviewOutcome strong {
+  display: block;
+  margin-bottom: 14px;
+  font-family: Montserrat, Inter, Arial, sans-serif;
+  font-size: clamp(24px, 2.6vw, 36px);
+  line-height: 1;
+}
+
+.overviewOutcome span {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 15px;
+  line-height: 1.55;
 }
 
 .programSection {
@@ -1130,8 +1247,8 @@ h3 {
   --tilt-y: 0deg;
   position: sticky;
   top: 118px;
-  min-height: 380px;
-  padding: 26px;
+  min-height: 285px;
+  padding: 22px;
   cursor: pointer;
   box-shadow: 0 18px 48px rgba(37, 37, 37, 0.08);
   overflow: hidden;
@@ -1173,7 +1290,7 @@ h3 {
   display: inline-flex;
   margin-bottom: 36px;
   color: var(--secondary);
-  font-family: "DM Sans", Montserrat, Arial, sans-serif;
+  font-family: Montserrat, Inter, Arial, sans-serif;
   font-size: 42px;
   font-weight: 900;
 }
@@ -1453,7 +1570,7 @@ h3 {
 
 .coreProduct strong {
   max-width: 190px;
-  font-family: "DM Sans", Montserrat, Arial, sans-serif;
+  font-family: Montserrat, Inter, Arial, sans-serif;
   font-size: 34px;
   line-height: 0.98;
 }
@@ -1797,7 +1914,7 @@ h3 {
   display: inline-flex;
   margin-bottom: 70px;
   color: var(--primary);
-  font-family: "DM Sans", Montserrat, Arial, sans-serif;
+  font-family: Montserrat, Inter, Arial, sans-serif;
   font-size: 54px;
   font-weight: 900;
   text-shadow: 0 8px 0 rgba(51, 102, 255, 0.12);
@@ -2126,6 +2243,18 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .overviewStory {
+    grid-template-columns: 1fr;
+  }
+
+  .overviewFlow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overviewFlow::before {
+    display: none;
+  }
+
   .heroStage {
     min-height: 640px;
   }
@@ -2205,7 +2334,7 @@ footer {
   .hero {
     display: flex;
     flex-direction: column;
-    gap: 34px;
+    gap: 26px;
     min-height: auto;
     padding: 96px var(--page-x-mobile) 44px;
   }
@@ -2232,8 +2361,8 @@ footer {
   .beforeAfter p,
   .programSection p,
   .robotCopy p:not(.eyebrow) {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.55;
   }
 
   .heroActions {
@@ -2325,12 +2454,46 @@ footer {
   }
 
   .storySection,
+  .overviewSection,
   .robotSection,
   .platformSection,
   .outcomeSection,
   .programSection,
   .auditSection {
     padding: 58px var(--page-x-mobile);
+  }
+
+  .overviewStory,
+  .overviewFlow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .overviewFlow {
+    padding: 12px;
+  }
+
+  .overviewStep {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .overviewStep span {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+
+  .overviewStep p,
+  .overviewOutcome span {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .overviewOutcome {
+    min-height: auto;
+    padding: 22px;
   }
 
   .robotSection {
@@ -2346,22 +2509,24 @@ footer {
 
   .robotBookingDemo {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .robotSide {
-    min-height: 40px;
+    display: none;
+    order: 2;
   }
 
   .robotStage {
     width: 100%;
-    min-height: 330px;
+    min-height: 230px;
     border-radius: 16px;
     transform: none;
   }
 
   .robotStage spline-viewer {
     width: 100%;
-    transform: scale(0.9) translateY(-100px);
+    transform: scale(0.7) translateY(-118px);
   }
 
   .robotGreetingBubble {
@@ -2379,6 +2544,14 @@ footer {
   .demoControlCard {
     justify-self: stretch;
     width: 100%;
+  }
+
+  .bookingPhone {
+    order: 1;
+  }
+
+  .demoControlCard {
+    order: 3;
   }
 
   .robotGreetingBubble::before {
@@ -2417,14 +2590,14 @@ footer {
   .featureCard,
   .programCard {
     min-height: auto;
-    padding: 22px;
+    padding: 20px;
   }
 
   .storyCard span,
   .featureCard span,
   .programGrid span {
-    margin-bottom: 28px;
-    font-size: 38px;
+    margin-bottom: 18px;
+    font-size: 30px;
   }
 
   .storyRail {
@@ -2440,7 +2613,7 @@ footer {
   }
 
   .sectionIntro {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   .programGrid {
@@ -2465,12 +2638,11 @@ footer {
   }
 
   .programGrid span {
-    margin-bottom: 34px;
+    margin-bottom: 18px;
   }
 
   .platformTheatre {
-    min-height: 560px;
-    margin: 44px auto 36px;
+    display: none;
   }
 
   .immersiveOps {
@@ -2479,7 +2651,7 @@ footer {
   }
 
   .opsGrowthPanel {
-    min-height: 320px;
+    min-height: 260px;
     padding: 18px;
   }
 
@@ -2510,8 +2682,8 @@ footer {
   }
 
   .beforeAfter > div {
-    min-height: 320px;
-    padding: 28px;
+    min-height: auto;
+    padding: 24px;
   }
 
   .auditSection {
@@ -2530,3 +2702,4 @@ footer {
     padding: 24px 18px 92px;
   }
 }
+

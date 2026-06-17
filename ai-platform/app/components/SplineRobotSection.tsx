@@ -311,8 +311,8 @@ export function SplineRobotSection() {
       aria-label="Interactive AI operations robot"
     >
       <div className="robotIntro">
-        <p className="eyebrow">AI-assisted sales robot</p>
-        <h2>Simulate a business conversation before your team joins.</h2>
+        <p className="eyebrow">Rave AI assistant demo</p>
+        <h2>See how Rave turns an enquiry into a booking-ready lead.</h2>
       </div>
       <div className="robotBookingDemo">
         <div className={`robotSide${isThinking ? " isThinking" : ""}`}>
@@ -399,11 +399,10 @@ export function SplineRobotSection() {
 
         <div className="demoControlCard">
           <p className="eyebrow">Client pitch demo</p>
-          <h3>From enquiry to booking-ready lead.</h3>
+          <h3>What this proves.</h3>
           <p>
-            Show how Rave answers questions, recommends packages, checks
-            availability, qualifies intent, and keeps customers moving toward
-            conversion.
+            Rave can answer, qualify, recommend, check availability, and guide
+            payment in one conversation.
           </p>
           <div className="demoSteps">
             <span>01 Capture inquiry</span>
