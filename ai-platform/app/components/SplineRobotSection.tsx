@@ -11,6 +11,19 @@ type ChatMessage = {
   highlight?: boolean;
 };
 
+function renderChatText(text: string) {
+  const urlPattern = /(https:\/\/[^\s]+)/g;
+  return text.split(urlPattern).map((part) => {
+    if (!part.match(urlPattern)) return part;
+
+    return (
+      <a href={part} key={part} rel="noreferrer" target="_blank">
+        {part}
+      </a>
+    );
+  });
+}
+
 const introReply =
   "Hello! I'm Rave, your AI teammate.\n\nI help businesses automate customer conversations, answer questions instantly, recommend products and services, qualify leads, and even assist with bookings and payments.\n\nThink of me as a team member that's available 24/7 and never misses a customer inquiry.\n\nHow can I help you today? Whether it's answering questions, finding the right package, or completing a booking, I'm ready to assist.";
 
@@ -300,9 +313,6 @@ export function SplineRobotSection() {
       <div className="robotIntro">
         <p className="eyebrow">AI-assisted sales robot</p>
         <h2>Simulate a business conversation before your team joins.</h2>
-        <p className="robotInstruction">
-          Send a message to experience how Rave qualifies leads and converts customers automatically.
-        </p>
       </div>
       <div className="robotBookingDemo">
         <div className={`robotSide${isThinking ? " isThinking" : ""}`}>
@@ -340,6 +350,12 @@ export function SplineRobotSection() {
               <span>{isThinking ? "thinking" : "online"}</span>
             </div>
           </div>
+          {chatPhase === "idle" ? (
+            <p className="phoneGuide">
+              Send a message to experience how Rave qualifies leads and converts
+              customers automatically.
+            </p>
+          ) : null}
           <div className="chatWindow" ref={chatWindowRef}>
             {messages.map((message) => (
               <div
@@ -348,7 +364,7 @@ export function SplineRobotSection() {
                 }${message.highlight ? " highlight" : ""}`}
                 key={message.id}
               >
-                {message.text}
+                {renderChatText(message.text)}
               </div>
             ))}
             {chatPhase === "thinking" ? (
@@ -371,6 +387,7 @@ export function SplineRobotSection() {
           <div className="phoneInput">
             <span>{currentInput}</span>
             <button
+              className={chatPhase === "idle" ? "needsAttention" : undefined}
               type="button"
               aria-label="Send simulated message to Rave"
               onClick={runChatDemo}
