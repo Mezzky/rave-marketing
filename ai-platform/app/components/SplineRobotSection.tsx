@@ -312,7 +312,7 @@ export function SplineRobotSection() {
     >
       <div className="robotIntro">
         <p className="eyebrow">Rave AI assistant demo</p>
-        <h2>See how Rave turns an enquiry into a booking-ready lead.</h2>
+        <h2>See Rave turn enquiries into bookings.</h2>
       </div>
       <div className="robotBookingDemo">
         <div className={`robotSide${isThinking ? " isThinking" : ""}`}>

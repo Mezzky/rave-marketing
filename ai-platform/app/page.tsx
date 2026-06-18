@@ -26,95 +26,59 @@ const productPillars = [
   {
     label: "Capture",
     title: "AI Sales Assistant",
-    text: "Answers enquiries, qualifies leads, recommends packages, and keeps customers moving.",
+    text: "Answers enquiries and qualifies leads.",
   },
   {
     label: "Connect",
     title: "Travel ERP",
-    text: "Connects bookings, finance, inventory, operations, payments, and supplier handoffs.",
+    text: "Connects bookings, finance, inventory, and operations.",
   },
   {
     label: "Automate",
     title: "Booking Automation",
-    text: "Turns quotes, holds, deposits, confirmations, and follow-ups into clear workflows.",
+    text: "Automates quotes, deposits, confirmations, and follow-ups.",
   },
   {
     label: "Operate",
     title: "Operations Visibility",
-    text: "Gives teams one workspace to track work, reduce admin, and protect service quality.",
+    text: "Keeps teams, tasks, and delivery visible.",
   },
 ];
 
 const story = [
   {
     label: "01",
-    title: "Enquiries arrive everywhere",
+    title: "Enquiries everywhere",
     text: "Website, WhatsApp, agents, events, and direct customers all create booking work.",
   },
   {
     label: "02",
-    title: "Manual work slows sales",
+    title: "Admin slows sales",
     text: "Teams chase details, quotes, deposits, supplier updates, and payment follow-ups.",
   },
   {
     label: "03",
-    title: "Rave Tech connects the flow",
+    title: "One connected flow",
     text: "AI, ERP, payments, inventory, and operations work from one coordinated layer.",
   },
   {
     label: "04",
-    title: "Bookings scale cleaner",
+    title: "Cleaner growth",
     text: "Customers get faster answers. Teams get cleaner handoffs and fewer repetitive tasks.",
-  },
-];
-
-const features = [
-  {
-    number: "01",
-    title: "Accounting for Travel",
-    points: [
-      "Recognize revenue on departure",
-      "Track reservation deposits from customers",
-      "Receive payment online",
-    ],
-    description:
-      "Accounting built for bookings, deposits, revenue, and travel complexity.",
-  },
-  {
-    number: "02",
-    title: "Streamline Operations",
-    points: [
-      "Custom workflow and data collection",
-      "Centralized team workspace",
-      "Intelligent pickup scheduling",
-    ],
-    description:
-      "Keep post-sale work visible, assigned, and moving.",
-  },
-  {
-    number: "03",
-    title: "eCommerce Built-in",
-    points: [
-      "Tours, activities, golf, and transportation",
-      "B2B and B2C channel support",
-      "Micro stores for sales events",
-    ],
-    description:
-      "Sell tours, services, and payments through digital channels.",
   },
 ];
 
 const transformationProgram = [
   {
-    title: "Map the operational drag",
+    title: "Find the friction",
     text: "Find where enquiries, quotes, payments, and handoffs create avoidable manual work.",
   },
   {
-    title: "Design the AI operating model",
+    title: "Design the flow",
     text: "Connect your current sales channels to cleaner workflows and stronger visibility.",
   },
   {
-    title: "Launch measurable improvements",
+    title: "Launch improvements",
     text: "Launch practical automation that improves response speed, control, and capacity.",
   },
 ];
@@ -219,10 +183,10 @@ export default function Home() {
       <section className="overviewSection">
         <div className="sectionIntro centered">
           <p className="eyebrow">What Rave Tech does</p>
-          <h2>One AI operating system for travel sales, bookings, and delivery.</h2>
+          <h2>AI for every booking step.</h2>
           <p>
-            Capture demand, qualify customers, collect payments, and move clean
-            booking data into operations without adding more admin.
+            Capture enquiries, qualify customers, collect payment, and hand
+            clean booking data to operations.
           </p>
         </div>
         <div className="overviewStory">
@@ -240,10 +204,9 @@ export default function Home() {
           </div>
           <aside className="overviewOutcome">
             <p className="eyebrow">Business outcome</p>
-            <strong>Enquiry to booking-ready data</strong>
+            <strong>Booking-ready data</strong>
             <span>
-              Rave Tech keeps every step connected, so teams can sell faster
-              without rebuilding operations around more headcount.
+              Sell faster with less manual coordination.
             </span>
           </aside>
         </div>
@@ -280,7 +243,7 @@ export default function Home() {
       <section className="platformSection" id="platform">
         <div className="sectionIntro centered">
           <p className="eyebrow">Platform ecosystem</p>
-          <h2>How Rave Tech connects the travel business.</h2>
+          <h2>One connected travel platform.</h2>
           <p>
             One flow from customer enquiry to quote, payment, operations, and accounting.
           </p>
@@ -288,7 +251,7 @@ export default function Home() {
         <MotionReveal className="immersiveOps">
           <div>
             <p className="eyebrow">Operating model</p>
-            <h2>From enquiry to delivery, every step stays visible.</h2>
+            <h2>From enquiry to delivery.</h2>
             <p>
               Rave Tech links customer conversations, booking data, payments,
               team tasks, and finance into one working system.
@@ -363,22 +326,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="featureGrid">
-          {features.map((feature, index) => (
-            <MotionReveal key={feature.number} delay={index * 0.08}>
-              <InteractiveTilt className="featureCard" strength={5}>
-                <span>{feature.number}</span>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-                <ul>
-                  {feature.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </InteractiveTilt>
-            </MotionReveal>
-          ))}
-        </div>
       </section>
 
       <section className="outcomeSection blueSandSection">
@@ -393,7 +340,7 @@ export default function Home() {
           </div>
           <div>
             <p className="eyebrow">After Rave Tech</p>
-            <h2>The business moves as one system.</h2>
+            <h2>One system.<br />Every team aligned.</h2>
             <p>
               Customers get instant help. Teams get cleaner data, faster payments, and visible operations.
             </p>
@@ -404,7 +351,7 @@ export default function Home() {
       <section className="programSection">
         <div className="sectionIntro">
           <p className="eyebrow">Services-led transformation</p>
-          <h2>Not a tool rollout. A sharper way to operate.</h2>
+          <h2>Operate smarter. Scale faster.</h2>
           <p>
             We help travel agencies turn automation into a practical operating
             model for faster sales, cleaner handoffs, and less admin.
@@ -431,7 +378,7 @@ export default function Home() {
       <section className="auditSection" id="contact">
         <div className="auditCopy">
           <p className="eyebrow">AI Operations Audit</p>
-          <h2>Find the hidden capacity inside your travel agency.</h2>
+          <h2>Find hidden capacity.</h2>
           <p>
             Book an audit to identify where AI can reduce manual booking work,
             speed up responses, and improve operational control.
