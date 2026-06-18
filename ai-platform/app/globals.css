@@ -799,7 +799,7 @@ h3 {
 
 .robotIntro h2 {
   margin-bottom: 0;
-  font-size: clamp(24px, 2.9vw, 42px);
+  font-size: clamp(25px, 3.6vw, 51px);
 }
 
 .robotBookingDemo {
@@ -1343,7 +1343,7 @@ h3 {
     radial-gradient(circle at 50% 28%, rgba(163, 186, 255, 0.34), transparent 28%),
     #ffffff;
   padding-top: clamp(96px, 12vw, 176px);
-  padding-bottom: clamp(96px, 12vw, 176px);
+  padding-bottom: clamp(48px, 6vw, 80px);
 }
 
 .immersiveOps {
@@ -1367,7 +1367,7 @@ h3 {
 }
 
 .immersiveOps h2 {
-  font-size: clamp(26px, 3.6vw, 46px);
+  font-size: clamp(25px, 3.6vw, 51px);
 }
 
 .immersiveOps p:not(.eyebrow) {
@@ -1769,8 +1769,8 @@ h3 {
 }
 
 .beforeAfter > div {
-  min-height: 460px;
-  padding: clamp(30px, 5vw, 58px);
+  min-height: 340px;
+  padding: clamp(26px, 4vw, 44px);
   border-radius: 14px;
 }
 
@@ -2540,7 +2540,7 @@ footer {
   }
 
   .robotIntro h2 {
-    font-size: clamp(22px, 6.4vw, 27px);
+    font-size: clamp(22px, 6.4vw, 29px);
   }
 
   .robotBookingDemo {

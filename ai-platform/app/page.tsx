@@ -129,10 +129,10 @@ export default function Home() {
           </p>
           <div className="heroActions">
             <a className="button primary" href="#contact">
-              Book an AI Operations Audit
+              Book an Ops Audit
             </a>
             <a className="button ghost" href="#rave-demo">
-              Watch Rave in action
+              See Rave
             </a>
           </div>
         </div>
@@ -378,10 +378,12 @@ export default function Home() {
       <section className="auditSection" id="contact">
         <div className="auditCopy">
           <p className="eyebrow">AI Operations Audit</p>
-          <h2>Find hidden capacity.</h2>
+          <h2>Find hidden capacity.<br />Turn it into growth.</h2>
           <p>
-            Book an audit to identify where AI can reduce manual booking work,
-            speed up responses, and improve operational control.
+            Tell us where your team loses time. We&apos;ll identify practical ways
+            Rave Tech can automate enquiries, reduce booking admin, accelerate
+            payments, and create more capacity for sales. Submit the form and
+            our team will respond within 48 hours with the next steps.
           </p>
         </div>
         <form className="contactForm">
