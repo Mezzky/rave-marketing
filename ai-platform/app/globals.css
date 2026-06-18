@@ -988,14 +988,50 @@ h3 {
 }
 
 .phoneGuide {
+  position: relative;
+  display: grid;
+  gap: 5px;
   margin: 0;
-  padding: 14px 20px;
+  padding: 16px 20px 16px 48px;
   color: var(--dark);
-  background: rgba(255, 204, 51, 0.22);
-  border-bottom: 1px solid rgba(37, 37, 37, 0.08);
-  font-size: 13px;
-  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border-bottom: 1px solid rgba(255, 204, 51, 0.58);
+  box-shadow: inset 0 -1px 0 rgba(37, 37, 37, 0.06);
+  font-size: 12px;
   line-height: 1.45;
+  text-align: left;
+}
+
+.phoneGuide::before {
+  content: "1";
+  position: absolute;
+  left: 16px;
+  top: 17px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: var(--white);
+  background: var(--secondary);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.phoneGuide strong {
+  font-family: Montserrat, Inter, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.phoneGuide span {
+  color: rgba(37, 37, 37, 0.78);
+  font-weight: 600;
+}
+
+.phoneGuide b {
+  color: var(--secondary);
+  font-weight: 900;
 }
 
 .chatWindow {

@@ -352,8 +352,11 @@ export function SplineRobotSection() {
           </div>
           {chatPhase === "idle" ? (
             <p className="phoneGuide">
-              Send a message to experience how Rave qualifies leads and converts
-              customers automatically.
+              <strong>Try the live Rave demo</strong>
+              <span>
+                Click <b>Send Message</b> below to watch Rave qualify a lead,
+                recommend a package, and guide the customer toward booking.
+              </span>
             </p>
           ) : null}
           <div className="chatWindow" ref={chatWindowRef}>
