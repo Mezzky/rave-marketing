@@ -386,21 +386,35 @@ export default function Home() {
             our team will respond within 48 hours with the next steps.
           </p>
         </div>
-        <form className="contactForm">
+        <form
+          action="https://formsubmit.co/ryansahadha@gmail.com"
+          className="contactForm"
+          method="POST"
+        >
+          <input name="_subject" type="hidden" value="New Rave Tech AI Operations Audit enquiry" />
+          <input name="_template" type="hidden" value="table" />
+          <input name="_captcha" type="hidden" value="false" />
+          <input
+            aria-hidden="true"
+            className="formHoneypot"
+            name="_honey"
+            tabIndex={-1}
+            type="text"
+          />
           <label>
             <span>Name</span>
-            <input name="name" type="text" autoComplete="name" />
+            <input name="name" type="text" autoComplete="name" required />
           </label>
           <label>
             <span>Email</span>
-            <input name="email" type="email" autoComplete="email" />
+            <input name="email" type="email" autoComplete="email" required />
           </label>
           <label>
             <span>Message</span>
-            <textarea name="message" rows={5} />
+            <textarea name="message" rows={5} required />
           </label>
           <label className="policy">
-            <input name="privacy" type="checkbox" />
+            <input name="privacy" type="checkbox" required value="Accepted" />
             <span>I have read and accept the Privacy Policy.</span>
           </label>
           <button className="button primary" type="submit">
