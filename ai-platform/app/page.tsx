@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { GSAPStorytelling } from "./components/GSAPStorytelling";
 import { InteractiveTilt } from "./components/InteractiveTilt";
 import { MotionReveal } from "./components/MotionReveal";
+import { PrivacyPolicyModal } from "./components/PrivacyPolicyModal";
 import { ScrollExperience } from "./components/ScrollExperience";
 import { SplineRobotSection } from "./components/SplineRobotSection";
 import { TypingHeadline } from "./components/TypingHeadline";
@@ -426,7 +427,7 @@ export default function Home() {
       <footer>
         <span>© Rave Tech Pte. Ltd., 2026.</span>
         <span>18 Cross St, #02-101, Singapore 048423</span>
-        <a href="#">Privacy Policy</a>
+        <PrivacyPolicyModal />
       </footer>
     </main>
   );
